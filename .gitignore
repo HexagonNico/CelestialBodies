@@ -1,0 +1,13 @@
+# Godot specific ignores
+.import/
+.godot/
+
+# Imported translations (automatically generated from CSV files)
+*.translation
+
+# VS cCde
+.vscode/
+
+# Directories
+.DS_Store
+.directory

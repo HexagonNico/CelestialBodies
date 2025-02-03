@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://crmdm11v1of4"]
+
+[ext_resource type="PackedScene" uid="uid://06hi51aj6cyw" path="res://scenes/test_planet.tscn" id="1_mg2y2"]
+
+[node name="TestBinarySystem" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.469849, 0.171011, 0, 0.342021, 0.939692, -0.500003, 0.813796, -0.296198, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 200, 0)
+
+[node name="TestPlanet1" parent="." instance=ExtResource("1_mg2y2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 0, 0)
+mass = 50.0
+linear_velocity = Vector3(0, 0, -15)
+
+[node name="TestPlanet2" parent="." instance=ExtResource("1_mg2y2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 0)
+mass = 50.0
+linear_velocity = Vector3(0, 0, 15)
