@@ -1,0 +1,100 @@
+[gd_scene load_steps=15 format=3 uid="uid://dkh25x0g2qnuh"]
+
+[ext_resource type="Script" path="res://mesh_tester/scripts/gdscript_mesh.gd" id="2_o2u40"]
+[ext_resource type="Script" path="res://mesh_tester/scripts/CSharpMesh.cs" id="3_qlmpo"]
+[ext_resource type="FastNoiseLite" uid="uid://t42lqyf45lce" path="res://resources/continent_noise.tres" id="3_w4yos"]
+[ext_resource type="FastNoiseLite" uid="uid://cnv4vgdssxex0" path="res://resources/ridges_noise.tres" id="4_4ccut"]
+[ext_resource type="Gradient" uid="uid://bnjkflnva64x7" path="res://resources/planet_colors.tres" id="6_83csa"]
+[ext_resource type="Script" path="res://mesh_tester/scripts/compute_shader_mesh.gd" id="6_jeqq3"]
+[ext_resource type="Script" path="res://mesh_tester/scripts/threaded_mesh.gd" id="6_jmduq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ahuc3"]
+vertex_color_use_as_albedo = true
+
+[sub_resource type="PrimitiveMesh" id="PrimitiveMesh_o8fgg"]
+resource_local_to_scene = false
+resource_name = ""
+lightmap_size_hint = Vector2i(0, 0)
+material = SubResource("StandardMaterial3D_ahuc3")
+custom_aabb = AABB(0, 0, 0, 0, 0, 0)
+flip_faces = false
+add_uv2 = false
+uv2_padding = 2.0
+script = ExtResource("2_o2u40")
+resolution = 256
+radius = 10.0
+continent_noise = ExtResource("3_w4yos")
+rigdes_noise = ExtResource("4_4ccut")
+planet_colors = ExtResource("6_83csa")
+generate_normals = false
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1dbhi"]
+vertex_color_use_as_albedo = true
+
+[sub_resource type="PrimitiveMesh" id="PrimitiveMesh_c6ips"]
+resource_local_to_scene = false
+resource_name = ""
+lightmap_size_hint = Vector2i(0, 0)
+material = SubResource("StandardMaterial3D_1dbhi")
+custom_aabb = AABB(0, 0, 0, 0, 0, 0)
+flip_faces = false
+add_uv2 = false
+uv2_padding = 2.0
+script = ExtResource("3_qlmpo")
+Resolution = 256
+Radius = 10.0
+ContinentNoise = ExtResource("3_w4yos")
+RidgesNoise = ExtResource("4_4ccut")
+PlanetColors = ExtResource("6_83csa")
+GenerateNormals = false
+
+[sub_resource type="PrimitiveMesh" id="PrimitiveMesh_jlg3x"]
+resource_local_to_scene = false
+resource_name = ""
+lightmap_size_hint = Vector2i(0, 0)
+custom_aabb = AABB(0, 0, 0, 0, 0, 0)
+flip_faces = false
+add_uv2 = false
+uv2_padding = 2.0
+script = ExtResource("6_jeqq3")
+resolution = 256
+radius = 10.0
+generate_normals = false
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_78xvl"]
+vertex_color_use_as_albedo = true
+
+[sub_resource type="PrimitiveMesh" id="PrimitiveMesh_826xo"]
+resource_local_to_scene = false
+resource_name = ""
+lightmap_size_hint = Vector2i(0, 0)
+material = SubResource("StandardMaterial3D_78xvl")
+custom_aabb = AABB(0, 0, 0, 0, 0, 0)
+flip_faces = false
+add_uv2 = false
+uv2_padding = 2.0
+script = ExtResource("6_jmduq")
+resolution = 256
+radius = 10.0
+continent_noise = ExtResource("3_w4yos")
+rigdes_noise = ExtResource("4_4ccut")
+planet_colors = ExtResource("6_83csa")
+generate_normals = false
+
+[node name="MeshTester" type="Node3D"]
+
+[node name="GDScriptMesh" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("PrimitiveMesh_o8fgg")
+
+[node name="CSharpMesh" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("PrimitiveMesh_c6ips")
+
+[node name="ComputeShaderMesh" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("PrimitiveMesh_jlg3x")
+
+[node name="ThreadedMesh" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("PrimitiveMesh_826xo")
