@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=4 uid="uid://xq14e2xtsuvq"]
 
-[ext_resource type="Script" path="res://scripts/planet_generator.gd" id="2_75uvr"]
+[ext_resource type="Script" path="res://addons/celestial_bodies/scripts/planet_generator.gd" id="2_75uvr"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_awxfj"]
 radius = 1.0

@@ -10,14 +10,18 @@ config_version=5
 
 [application]
 
-config/name="PlanetsThing"
-config/tags=PackedStringArray("3d", "demo", "mono")
+config/name="CelestialBodies"
+config/tags=PackedStringArray("3d", "addon", "demo", "mono")
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://icon.png"
 
 [dotnet]
 
 project/assembly_name="PlanetsThing"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/celestial_bodies/plugin.cfg")
 
 [physics]
 
