@@ -15,6 +15,10 @@ config/tags=PackedStringArray("3d", "addon", "demo", "mono")
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 config/icon="res://icon.png"
 
+[debug]
+
+shapes/celestial_bodies/points_in_orbit=3000
+
 [dotnet]
 
 project/assembly_name="PlanetsThing"
