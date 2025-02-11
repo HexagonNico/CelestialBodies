@@ -5,13 +5,15 @@ This project is based on Sebastian Lague's [Solar System](https://github.com/Seb
 
 ## Project overview
 
+> [!NOTE]
+> The demo project requires the Mono version of Godot. The addon, however, can be used with the regular version as well.
+
+### Planet Generators
+
 The project explores different ways of implementing a procedural planet mesh generator.
 
 The `mesh_tester` directory contains different scripts with different mesh generators.
 The generators can be viewed together in the `mesh_tester.tscn` scene.
-
-> [!NOTE]
-> The demo project requires the Mono version of Godot. The addon, however, can be used with the regular version as well.
 
 The `gdscript_mesh.gd` script is the basic implementation written in GDScript.
 
@@ -27,6 +29,13 @@ It uses six threads to generate the six faces of the mesh, but does not pause th
 It can also save the mesh in the scene file for it to be reloaded the next time without being regenerated.
 
 Each one of these scripts will show a read-only field in the inspector to show how long it took to generate the mesh in milliseconds.
+
+### Solar system simulation
+
+The `solar_system.tscn` scene shows an example of a solar system where different celestial bodies interact with each other.
+In the editor you can see a prediction of the trajectory of each celestial body.
+
+You can modify the masses the and initial velocities of the celestial bodies in the scene to adjust their orbit and the editor will update the prediction in real time.
 
 ## Installing the addon
 
@@ -47,13 +56,14 @@ A planet generator can be added to your scene from the "Create new node" menu an
 The planet will be regenerated every time a property in the inspector is modified.
 The mesh will be saved in the scene file so that is does not have to be regenerated again when the scene is reopened.
 
+The `celestial_body_3d.gd` script extends from **RigidBody3D** and is used to create a celestial body.
+A node with this script should usually be at the root of your planet scene.
+It can be created by searching for **CelestialBody3D** in the "Create new node" menu.
+All celestial bodies in the scene affect each other through gravitational forces.
+
 See the `test_planet.tscn` scene for an example.
 
 ## Future plans
-
-* Solar system simulation
-	* A **CelestialBody3D** script to simulate the movement of planets
-	* A solar system example with planets orbiting around a star and moons orbiting around planets
 
 * Atmosphere rendering
 	* Atmosphere using FogVolume?
