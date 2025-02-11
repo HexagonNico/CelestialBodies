@@ -21,7 +21,7 @@ shapes/celestial_bodies/points_in_orbit=3000
 
 [dotnet]
 
-project/assembly_name="PlanetsThing"
+project/assembly_name="CelestialBodies"
 
 [editor_plugins]
 
