@@ -2,7 +2,6 @@
 
 [resource]
 frequency = 0.2
-offset = Vector3(-4, 0, 0)
 fractal_octaves = 3
 fractal_lacunarity = 5.0
 fractal_gain = 0.2

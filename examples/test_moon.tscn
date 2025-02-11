@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=4 uid="uid://xq14e2xtsuvq"]
+[gd_scene load_steps=5 format=4 uid="uid://xq14e2xtsuvq"]
 
+[ext_resource type="Script" path="res://addons/celestial_bodies/scripts/celestial_body_3d.gd" id="1_xd7kw"]
 [ext_resource type="Script" path="res://addons/celestial_bodies/scripts/planet_generator.gd" id="2_75uvr"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_awxfj"]
@@ -69,6 +70,8 @@ _surfaces = [{
 }]
 
 [node name="TestMoon" type="RigidBody3D"]
+mass = 7500.0
+script = ExtResource("1_xd7kw")
 
 [node name="CollisionShape" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_awxfj")

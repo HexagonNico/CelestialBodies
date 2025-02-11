@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://comapeg5fvc2w"]
+
+[ext_resource type="PackedScene" uid="uid://17vhhicdl1r4" path="res://examples/test_star.tscn" id="1_5mgjs"]
+[ext_resource type="PackedScene" uid="uid://06hi51aj6cyw" path="res://examples/test_planet.tscn" id="2_y2878"]
+[ext_resource type="PackedScene" uid="uid://xq14e2xtsuvq" path="res://examples/test_moon.tscn" id="3_qqp67"]
+
+[node name="SolarSystem" type="Node3D"]
+
+[node name="Camera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 500, 0)
+
+[node name="TestStar" parent="." instance=ExtResource("1_5mgjs")]
+angular_velocity = Vector3(0, 0.523599, 0)
+
+[node name="TestPlanet" parent="." instance=ExtResource("2_y2878")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 488, 0, 0)
+linear_velocity = Vector3(0, 0, 48.18)
+angular_velocity = Vector3(0, 0.349066, 0)
+
+[node name="TestMoon" parent="." instance=ExtResource("3_qqp67")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 470, 0, 0)
+linear_velocity = Vector3(0, 0, 35.415)
+angular_velocity = Vector3(0, 0.436332, 0)
